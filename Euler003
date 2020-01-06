@@ -1,0 +1,24 @@
+//there has to be a way to make this more efficient,
+//but this works.
+function largestPrimeFactor(number) {
+  let largePrime = 0;
+  for (let i=1; i<=number; i++){
+    if (number%i==0 && isPrime(i)){
+      largePrime = i;
+    }
+  }
+  
+
+  return largePrime;
+}
+
+function isPrime(num){
+  for(let i=2; i<num; i++){
+    if(num%i == 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(largestPrimeFactor(13195));
