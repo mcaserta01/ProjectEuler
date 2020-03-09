@@ -1,0 +1,24 @@
+function nthPrime(n) {
+  if(n<1){
+    return 0;
+  } 
+  let result=1;
+  for(let i=0; i<n; i++){
+    result++;
+    while(!isPrime(result)){
+      result++;
+    }
+  }
+  return result;
+}
+
+function isPrime(num){
+  for(let i=2; i<num; i++){
+    if(num%i == 0){
+      return false;
+    }
+  }
+  return true;
+}
+//console.log(nthPrime(9000))
+nthPrime(10001);
